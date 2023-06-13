@@ -25,6 +25,9 @@ class HolaMundo extends BaseController
             } else {
                 var_dump($userModel->errors());
             }
+            $users = $userModel->withDeleted()->findAll();
+            $users = array('users' => $users);
+            return view('estructura/header') . view('estructura/body', $users);
     }
         
     public function index()
