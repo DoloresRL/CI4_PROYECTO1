@@ -1,0 +1,42 @@
+CRITICAL - 2023-06-06 23:08:29 --> Undefined constant "App\Controllers\colores"
+in APPPATH\Controllers\HolaMundo.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\HolaMundo->desdeSubCarpeta()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HolaMundo))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-06 23:10:57 --> Array to string conversion
+in APPPATH\Controllers\HolaMundo.php on line 18.
+ 1 APPPATH\Controllers\HolaMundo.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\wamp64\\www\\CI4_Proyecto1\\app\\Controllers\\HolaMundo.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\HolaMundo->desdeSubCarpeta()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HolaMundo))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-06 23:11:18 --> Array to string conversion
+in APPPATH\Controllers\HolaMundo.php on line 18.
+ 1 APPPATH\Controllers\HolaMundo.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\wamp64\\www\\CI4_Proyecto1\\app\\Controllers\\HolaMundo.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\HolaMundo->desdeSubCarpeta()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HolaMundo))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-06 23:19:14 --> Undefined variable $naranja
+in APPPATH\Views\vista_hola_mundo.php on line 2.
+ 1 APPPATH\Views\vista_hola_mundo.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $naranja', 'C:\\wamp64\\www\\CI4_Proyecto1\\app\\Views\\vista_hola_mundo.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\wamp64\\www\\CI4_Proyecto1\\app\\Views\\vista_hola_mundo.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('vista_hola_mundo', [], true)
+ 5 APPPATH\Controllers\HolaMundo.php(9): view('vista_hola_mundo')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\HolaMundo->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HolaMundo))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-06 23:20:23 --> Undefined variable $naranja
+in APPPATH\Views\vista_hola_mundo.php on line 2.
+ 1 APPPATH\Views\vista_hola_mundo.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $naranja', 'C:\\wamp64\\www\\CI4_Proyecto1\\app\\Views\\vista_hola_mundo.php', 2)
+ 2 SYSTEMPATH\View\View.php(213): include('C:\\wamp64\\www\\CI4_Proyecto1\\app\\Views\\vista_hola_mundo.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('vista_hola_mundo', [], true)
+ 5 APPPATH\Controllers\HolaMundo.php(9): view('vista_hola_mundo')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\HolaMundo->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HolaMundo))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
