@@ -6,30 +6,53 @@ use App\Models\UserModel;
 
 class HolaMundo extends BaseController
 {
-    public function __construct(){
+    public function __construct()
+    {
         helper('form');
     }
-    public function formulario(){
-        
+    public function formulario()
+    {
+
         return view('estructura/header') . view('estructura/formulario');
-    }      
+    }
     public function guarda()
     {
-            $userModel = new UserModel();
-            $data = [
-                'name' => $this->request->getPost('name'),
-                'email' => $this->request->getPost('email')
-            ];
-            if ($userModel->insert($data)) {
-                echo "Datos guardados correctamente";
-            } else {
-                var_dump($userModel->errors());
-            }
-            $users = $userModel->withDeleted()->findAll();
-            $users = array('users' => $users);
-            return view('estructura/header') . view('estructura/body', $users);
-    }
+        helper('url');
+        $userModel = new UserModel();
+        $request = \Config\Services::request();
         
+        $data = [
+            'name' => $this->request->getPost('name'),
+            'email' => $this->request->getPost('email')
+        ];
+        if ($request->getPostGet('id')) {
+            $data['id'] = $request->getPostGet('id');
+        }
+
+        if ($userModel->save($data)) {
+            echo "Datos guardados correctamente";
+        } else {
+            var_dump($userModel->errors());
+        }
+        //die();
+        /*$users = $userModel->findAll();
+        $users = array('users' => $users);
+        return view('estructura/header') . view('estructura/body', $users);
+        */
+        return redirect()->to('index.php/hola-mundo'); // Redirecciona a la ruta 'hola-mundo'
+            
+    }
+	public function editar()
+    {
+        $userModel = new UserModel();
+        $request = \Config\Services::request();
+        $id = $request->getPostGet('id');
+        //echo "El id es:".$id;
+        $user = $userModel->find($id);
+        //var_dump($users);
+        return view('estructura/header') . view('estructura/formulario', ['user' => $user]);
+    }
+
     public function index()
     {
         $userModel = new UserModel();
@@ -38,7 +61,7 @@ class HolaMundo extends BaseController
         //$users = $userModel->findAll(); //recuperar todos los registros, sin incluir los registros eliminados suavemente (soft deleted).
         //$users = $userModel->where('name','Maria')->findAll();//recuperar todos los registros donde el nombre sea igual a Maria
         //$users = $userModel->findAll(3,2);//Recuperar registros utilizando limites (3 registros a partir del indice 2)
-        $users = $userModel->withDeleted()->findAll();//recuperar todos los registros, incluidos los registros eliminados suavemente (soft deleted).
+        $users = $userModel->findAll(); //recuperar todos los registros, incluidos los registros eliminados suavemente (soft deleted).
         //$users = $userModel->onlyDeleted()->findAll();//recuperar únicamente los registros que han sido eliminados suavemente (soft deleted)
         $users = array('users' => $users);
         //var_dump($users); //imprimirá en la salida del programa una representación estructurada de la variable $user, incluyendo su tipo de dato y su contenido.
@@ -161,8 +184,8 @@ class HolaMundo extends BaseController
             'email' => "Programador6@correo.com"
         ];
 
-        if(!$userModel->save($data));
-        {
+        if (!$userModel->save($data))
+            ; {
             var_dump($userModel->errors());
         }
         $users = $userModel->findAll();
@@ -171,17 +194,18 @@ class HolaMundo extends BaseController
         return view('estructura/header') . view('estructura/body', $users);
     }
 
-    public function obtenerRegistro(){
+    public function obtenerRegistro()
+    {
         $userModel = new UserModel();
         //Obtener como objeto
-        $users = $userModel->asObject()->where('name','Programador6')
-        ->orderBy('id','asc')
-        ->findAll();
+        $users = $userModel->asObject()->where('name', 'Programador6')
+            ->orderBy('id', 'asc')
+            ->findAll();
         var_dump($users);
         //Obtener como array
-        $users = $userModel->asArray()->where('name','Programador6')
-        ->orderBy('id','asc')
-        ->findAll();
+        $users = $userModel->asArray()->where('name', 'Programador6')
+            ->orderBy('id', 'asc')
+            ->findAll();
         var_dump($users);
 
     }

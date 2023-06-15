@@ -42,6 +42,7 @@ $routes->get('insertarUsuarioInvalido', 'HolaMundo::insertUserInvalid');
 $routes->get('obtenerRegistro', 'HolaMundo::obtenerRegistro');
 $routes->get('formulario', 'HolaMundo::formulario');
 $routes->post('guardarUsuario', 'HolaMundo::guarda');
+$routes->get('editarUsuario', 'HolaMundo::editar');
 
 
 

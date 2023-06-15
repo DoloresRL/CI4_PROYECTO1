@@ -1,0 +1,13 @@
+CRITICAL - 2023-06-14 23:37:04 --> Call to a member function errors() on null
+in APPPATH\Controllers\HolaMundo.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\HolaMundo->editar()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HolaMundo))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-14 23:41:18 --> Array to string conversion
+in APPPATH\Controllers\HolaMundo.php on line 43.
+ 1 APPPATH\Controllers\HolaMundo.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\wamp64\\www\\CI4_PROYECTO1\\app\\Controllers\\HolaMundo.php', 43)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\HolaMundo->editar()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HolaMundo))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
