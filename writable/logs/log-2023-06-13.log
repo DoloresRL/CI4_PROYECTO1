@@ -1,9 +1,0 @@
-CRITICAL - 2023-06-13 17:25:56 --> Invalid file: "estructura/formulario.php"
-in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
- 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('estructura/formulario.php')
- 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('estructura/formulario', [], true)
- 3 APPPATH\Controllers\HolaMundo.php(14): view('estructura/formulario')
- 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\HolaMundo->formulario()
- 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\HolaMundo))
- 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
