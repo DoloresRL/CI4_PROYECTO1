@@ -32,17 +32,18 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('hola-mundo', 'HolaMundo::index');
 $routes->get('hola-mundo2', 'HolaMundo::desdeSubCarpeta');
-$routes->get('insertar-usuario', 'HolaMundo::insert');
-$routes->get('modificar-usuario', 'HolaMundo::update');
-$routes->get('modificar-usuarios', 'HolaMundo::updateWhere');
-$routes->get('save-usuarios', 'HolaMundo::save');
-$routes->get('eliminar-usuarios', 'HolaMundo::delete');
-$routes->get('purge-usuarios', 'HolaMundo::purgeDeletedRecords');
-$routes->get('insertarUsuarioInvalido', 'HolaMundo::insertUserInvalid');
-$routes->get('obtenerRegistro', 'HolaMundo::obtenerRegistro');
-$routes->get('formulario', 'HolaMundo::formulario');
-$routes->post('guardarUsuario', 'HolaMundo::guarda');
-$routes->get('editarUsuario', 'HolaMundo::editar');
+$routes->get('insertar-ejemplo', 'Users::insert');
+$routes->get('modificar-ejemplo', 'Users::update');
+$routes->get('modificar-ejemplo', 'Users::updateWhere');
+$routes->get('save-ejemplo', 'Users::save');
+$routes->get('eliminar-ejemplo', 'Users::delete');
+$routes->get('purge-ejemplo', 'Users::purgeDeletedRecords');
+$routes->get('insertarEjemploInvalido', 'Users::insertUserInvalid');
+$routes->get('obtenerRegistroEjemplo', 'Users::obtenerRegistro');
+$routes->get('formulario', 'Users::formulario');
+$routes->get('listarUsuarios', 'Users::listar');
+$routes->post('guardarUsuario', 'Users::guardar');
+$routes->get('editarUsuario', 'Users::editar');
 
 
 
