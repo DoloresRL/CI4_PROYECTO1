@@ -44,6 +44,7 @@ $routes->get('formulario', 'Users::formulario');
 $routes->get('listarUsuarios', 'Users::listar');
 $routes->post('guardarUsuario', 'Users::guardar');
 $routes->get('editarUsuario', 'Users::editar');
+$routes->get('eliminarUsuario', 'Users::eliminar');
 
 
 

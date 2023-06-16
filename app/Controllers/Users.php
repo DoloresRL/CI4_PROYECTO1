@@ -20,7 +20,7 @@ class Users extends BaseController
 
         $userModel = new UserModel();
         $request = \Config\Services::request();
-        
+
         $data = [
             'name' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email')
@@ -40,9 +40,9 @@ class Users extends BaseController
         return view('estructura/header') . view('estructura/body', $users);
         */
         return redirect()->to('index.php/listarUsuarios'); // Redirecciona a la ruta 'listarUsuarios'
-            
+
     }
-	public function editar()
+    public function editar()
     {
         $userModel = new UserModel();
         $request = \Config\Services::request();
@@ -51,6 +51,18 @@ class Users extends BaseController
         $user = $userModel->find($id);
         //var_dump($users);
         return view('estructura/header') . view('estructura/formulario', ['user' => $user]);
+    }
+
+    public function eliminar()
+    {
+        $userModel = new UserModel();
+        $request = \Config\Services::request();
+        $id = $request->getPostGet('id');
+        echo "El id es:" . $id;
+        if ($userModel->delete($id)) {
+            echo "Usuario eliminado";
+        }
+        return redirect()->to('index.php/listarUsuarios'); // Redirecciona a la ruta 'listarUsuarios'
     }
 
     public function Listar()

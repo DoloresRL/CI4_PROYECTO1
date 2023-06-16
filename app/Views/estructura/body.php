@@ -36,7 +36,7 @@
                             </td>
                             <td>
                             <a href="<?php echo base_url(); ?>index.php/editarUsuario?id=<?= $user['id']; ?>" class="btn btn-warning" role="button"><i class="fa fa-pencil-square-o"></i></a>
-                                <?= form_button(array('name' => 'borrar', 'type' => 'submit', 'class' => 'btn btn-danger', 'content' => '<i class="fa fa-trash"></i>')); ?>
+                            <a href="<?php echo base_url(); ?>index.php/eliminarUsuario?id=<?= $user['id']; ?>" class="btn btn-danger" role="button"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
