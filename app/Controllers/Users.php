@@ -73,11 +73,27 @@ class Users extends BaseController
         //$users = $userModel->findAll(); //recuperar todos los registros, sin incluir los registros eliminados suavemente (soft deleted).
         //$users = $userModel->where('name','Maria')->findAll();//recuperar todos los registros donde el nombre sea igual a Maria
         //$users = $userModel->findAll(3,2);//Recuperar registros utilizando limites (3 registros a partir del indice 2)
-        $users = $userModel->findAll(); //recuperar todos los registros, incluidos los registros eliminados suavemente (soft deleted).
         //$users = $userModel->onlyDeleted()->findAll();//recuperar únicamente los registros que han sido eliminados suavemente (soft deleted)
+        
+        $datos=$userModel->findAll();
+		$datos=array('users'=>$datos,'cabecera'=>view('estructura/header'));
+		$estructura=view('estructura/body',$datos);
+		return $estructura;
+    }
+
+    public function index()
+    {
+        $userModel = new UserModel();
+        //$user = $userModel->find('1');
+        //$users = $userModel->find([1,2]);
+        //$users = $userModel->findAll(); //recuperar todos los registros, sin incluir los registros eliminados suavemente (soft deleted).
+        //$users = $userModel->where('name','Maria')->findAll();//recuperar todos los registros donde el nombre sea igual a Maria
+        //$users = $userModel->findAll(3,2);//Recuperar registros utilizando limites (3 registros a partir del indice 2)
+        //$users = $userModel->onlyDeleted()->findAll();//recuperar únicamente los registros que han sido eliminados suavemente (soft deleted)
+        
+        $users = $userModel->findAll(); //recuperar todos los registros, incluidos los registros eliminados suavemente (soft deleted).
         $users = array('users' => $users);
         //var_dump($users); //imprimirá en la salida del programa una representación estructurada de la variable $user, incluyendo su tipo de dato y su contenido.
-
         return view('estructura/header') . view('estructura/body', $users);
     }
 

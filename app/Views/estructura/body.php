@@ -1,3 +1,7 @@
+<?php
+//echo view('estructura/header');
+echo $cabecera;
+?>
 <body>
     <header>
         <h1>Usuarios</h1>
