@@ -1,6 +1,6 @@
 <?php
-//echo view('estructura/header');
-echo $cabecera;
+echo view('estructura/header');
+//echo $cabecera;
 ?>
 <body>
     <header>

@@ -1,3 +1,4 @@
 # Ignorar archivos de configuración de CodeIgniter
 /writable/debugbar/*
 /writable/logs/*
+/writable/session/*

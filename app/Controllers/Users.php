@@ -74,11 +74,11 @@ class Users extends BaseController
         //$users = $userModel->where('name','Maria')->findAll();//recuperar todos los registros donde el nombre sea igual a Maria
         //$users = $userModel->findAll(3,2);//Recuperar registros utilizando limites (3 registros a partir del indice 2)
         //$users = $userModel->onlyDeleted()->findAll();//recuperar únicamente los registros que han sido eliminados suavemente (soft deleted)
-        
-        $datos=$userModel->findAll();
-		$datos=array('users'=>$datos,'cabecera'=>view('estructura/header'));
-		$estructura=view('estructura/body',$datos);
-		return $estructura;
+
+        $datos = $userModel->findAll();
+        $datos = array('users' => $datos, 'cabecera' => view('estructura/header'));
+        $estructura = view('estructura/body', $datos);
+        return $estructura;
     }
 
     public function index()
@@ -90,7 +90,7 @@ class Users extends BaseController
         //$users = $userModel->where('name','Maria')->findAll();//recuperar todos los registros donde el nombre sea igual a Maria
         //$users = $userModel->findAll(3,2);//Recuperar registros utilizando limites (3 registros a partir del indice 2)
         //$users = $userModel->onlyDeleted()->findAll();//recuperar únicamente los registros que han sido eliminados suavemente (soft deleted)
-        
+
         $users = $userModel->findAll(); //recuperar todos los registros, incluidos los registros eliminados suavemente (soft deleted).
         $users = array('users' => $users);
         //var_dump($users); //imprimirá en la salida del programa una representación estructurada de la variable $user, incluyendo su tipo de dato y su contenido.
@@ -111,7 +111,7 @@ class Users extends BaseController
             ->reorient()
             //->rotate(90)
             //->fit(250,250,'bottom-left')
-            ->resize($ancho/2,$alto/2)
+            ->resize($ancho / 2, $alto / 2)
             //->crop(300, 300, 50, 0)
             ->save('public/images/codeigniter_p.jpg');
         return view('estructura/usoImagen.php');
@@ -120,9 +120,12 @@ class Users extends BaseController
     public function insert()
     {
         $userModel = new UserModel();
+        $password = '12345';
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $data = [
-            'name' => "Programadornuevo",
-            'email' => "Programadornuevo@correo.com"
+            'name' => "Programador Contra2",
+            'email' => "ProgramadorContra2@correo.com",
+            'passwordUser' => $hashedPassword
         ];
 
         $userModel->insert($data);
@@ -240,5 +243,12 @@ class Users extends BaseController
             ->findAll();
         var_dump($users);
 
+    }
+
+    public function obtenerUsuario($data)
+    {
+        $userModel = new UserModel();
+        $usuario = $userModel->asArray()->where('nameUser', $data['nameUser']);
+        return $usuario->get()->getResultArray();
     }
 }

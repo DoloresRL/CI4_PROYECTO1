@@ -29,7 +29,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('HolaMundo', 'Home::index');
 $routes->get('hola-mundo', 'HolaMundo::index');
 $routes->get('hola-mundo2', 'HolaMundo::desdeSubCarpeta');
 $routes->get('insertar-ejemplo', 'Users::insert');
@@ -46,6 +46,11 @@ $routes->post('guardarUsuario', 'Users::guardar');
 $routes->get('editarUsuario', 'Users::editar');
 $routes->get('eliminarUsuario', 'Users::eliminar');
 $routes->get('imagenManipulacion', 'Users::imagenManipulacion');
+$routes->get('/', 'LoginContoller::index');
+$routes->get('inicio', 'LoginContoller::inicio');
+$routes->post('login', 'LoginContoller::login');
+$routes->get('salir', 'LoginContoller::salir');
+
 
 
 
